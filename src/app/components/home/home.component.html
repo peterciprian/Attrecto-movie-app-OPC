@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="d-flex flex-wrap justify-content-around">
+    <movie-card></movie-card>
+    <movie-card></movie-card>
+    <movie-card></movie-card>
+    <movie-card></movie-card>
+    {{crud.$movies | async | json}}
+  </div>
+</div>
