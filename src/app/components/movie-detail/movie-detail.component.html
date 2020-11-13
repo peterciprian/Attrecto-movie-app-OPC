@@ -1,6 +1,8 @@
-<div class="d-flex flex-row justify-content-center align-items-center">
-  <img class="poster-image mr-4" [src]="imgSource">
-  <div class="details flex-column">
+<div class="row">
+  <div class="d-flex justify-content-center col-sm-12 col-md-4">
+    <img class="poster-image mr-4" [src]="imgSource">
+  </div>
+  <div class="d-flex justify-content-center col-sm-12 col-md-8 details flex-column">
     <h1>{{data.movie.title}}</h1>
     <h3 *ngIf="data.movie.tagline">{{data.movie.tagline}}</h3>
     <div>{{data.movie.overview}}</div>
@@ -19,4 +21,5 @@
       <div *ngFor="let genre of data.movie.genres" class="label mr-2">{{genre.name}}</div>
     </div>
   </div>
+
 </div>

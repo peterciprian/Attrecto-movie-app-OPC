@@ -24,3 +24,9 @@
     border-bottom: 2px solid #FFF4E9;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    padding-bottom: 186px;
+  }
+}

@@ -4,7 +4,20 @@ img.poster-image {
 }
 
 .details {
-  max-width: 600px
+  width: 600px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 768px) {
+  img.poster-image {
+    width: 150px;
+    height: 225px;
+  }
+
+  .details {
+    width: 250px;
+  }
 }
 
 .datas {
@@ -17,6 +30,7 @@ img.poster-image {
 
 .imdb-link {
   margin: 12px 0;
+  width: fit-content;
 }
 
 .genre-labels {
@@ -27,4 +41,8 @@ img.poster-image {
     padding: 4px;
     width: auto;
   }
+}
+
+::ng-deep.mat-dialog-container {
+  height: auto !important;
 }

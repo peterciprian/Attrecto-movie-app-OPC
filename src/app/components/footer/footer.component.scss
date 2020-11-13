@@ -1,4 +1,10 @@
 .navbar {
+  flex-direction: row;
   background-color: #16697A !important;
-  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
 }
