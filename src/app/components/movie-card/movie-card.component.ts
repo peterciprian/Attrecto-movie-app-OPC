@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Result } from 'src/app/interfaces/movies';
+import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
   selector: 'movie-card',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() movie: Result;
+  public width = 150;
+  public height = 225;
 
-  ngOnInit(): void {
-  }
+  constructor(public crud: CrudService) { }
+
+  ngOnInit(): void { }
 
 }

@@ -1,1 +1,8 @@
-<p>movie-card works!</p>
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <img src="https://image.tmdb.org/t/p/w{{width}}_and_h{{height}}_bestv2{{movie.poster_path}}" alt="movie.name">
+  <h1>{{movie.title}}</h1>
+  <div>{{movie.release_date}}</div>
+  <div class="genre-labels flex-row mx-2">
+    <div *ngFor="let genre of movie.genre_ids" class="label">{{crud.genreMap[genre]}}</div>
+  </div>
+</div>

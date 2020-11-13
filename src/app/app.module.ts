@@ -2,26 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CrudService } from './services/crud.service';
-import { NotificationService } from './services/notification.service';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
-import { HttpClientModule } from '@angular/common/http';
+import { CrudService } from './services/crud.service';
+import { NotificationService } from './services/notification.service';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomeComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     MatSnackBarModule
   ],
   providers: [CrudService, NotificationService],

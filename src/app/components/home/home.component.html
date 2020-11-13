@@ -1,9 +1,6 @@
 <div class="container">
-  <div class="d-flex flex-wrap justify-content-around">
-    <movie-card></movie-card>
-    <movie-card></movie-card>
-    <movie-card></movie-card>
-    <movie-card></movie-card>
-    {{crud.$movies | async | json}}
+  <input #queryString type="text" [ngModel]="crud.$queryString | async" (ngModelChange)="crud.$queryString.next(queryString.value)">
+  <div *ngIf="crud.movies" class="d-flex flex-wrap justify-content-around">
+    <movie-card *ngFor="let movie of crud.movies.results" [movie]="movie" (click)="openDetails(movie.id)"></movie-card>
   </div>
 </div>
