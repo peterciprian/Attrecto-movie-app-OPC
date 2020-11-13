@@ -1,6 +1,10 @@
-<div class="container">
-  <input #queryString type="text" [ngModel]="crud.$queryString | async" (ngModelChange)="crud.$queryString.next(queryString.value)">
-  <div *ngIf="crud.movies" class="d-flex flex-wrap justify-content-around">
+<div class="container-fluid">
+  <div class="form-field d-flex flex-row align-self center align-items-center center m-4">
+    <label for="search-input" class="m-4">Search</label>
+    <input id="search-input" class="search-input  w-50" #queryString type="text" placeholder="type to search"
+      [ngModel]="crud.$queryString | async" (ngModelChange)="crud.$queryString.next(queryString.value)">
+  </div>
+  <div *ngIf="crud.movies" class="mt-4 d-flex flex-wrap justify-content-around">
     <movie-card *ngFor="let movie of crud.movies.results" [movie]="movie" (click)="openDetails(movie.id)"></movie-card>
   </div>
 </div>

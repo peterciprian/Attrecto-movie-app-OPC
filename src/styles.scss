@@ -8,6 +8,8 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #FFF4E9;
+
 }
 
 .success {
@@ -22,4 +24,33 @@ snack-bar-container {
   &.lift {
     margin-bottom: 50px;
   }
+}
+
+a {
+  border: 1px solid #2E282A;
+  border-radius: 4px;
+  padding: 6px;
+  text-decoration: none;
+}
+
+a:link {
+  color: #2E282A;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #E1BB80;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E1BB80;
+  border: 1px solid #E1BB80;
+  text-decoration: none;
+  background-color: #195765 !important;
+}
+
+a:active {
+  color: #E1BB80;
+  text-decoration: none;
 }

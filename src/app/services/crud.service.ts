@@ -13,7 +13,7 @@ export class CrudService {
 
   public movies: Movies;
   public language: string;
-  public $queryString = new BehaviorSubject<string>('Game');
+  public $queryString = new BehaviorSubject<string>('');
   public genreMap: Map<number, string>;
 
   constructor(private http: HttpClient) {
