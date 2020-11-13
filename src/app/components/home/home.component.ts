@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
 
   public openDetails(id: number): void {
     this.crud.fetchDetails(id).subscribe( movieDetails => {
-      console.log(movieDetails);
       this.openDialog(movieDetails);
     }, error => {
       this.notification.showError(error);
@@ -26,7 +25,6 @@ export class HomeComponent implements OnInit {
   }
 
   public openDialog(movie: Details): void {
-    console.log(movie);
     this.dialog.open(MovieDetailComponent, {
       data: {
         movie

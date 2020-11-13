@@ -15,6 +15,7 @@ import { NotificationService } from './services/notification.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,

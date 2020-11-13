@@ -16,7 +16,6 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(public crud: CrudService, @Inject(MAT_DIALOG_DATA) public data: {movie: Details}) {
     this.imgSource = this.data.movie.poster_path ? `https://image.tmdb.org/t/p/w${this.width}_and_h${this.height}_bestv2${this.data.movie.poster_path}` : 'assets/img/movieDetailErrorImage.png';
-    console.log(this.data.movie);
    }
 
   ngOnInit(): void {

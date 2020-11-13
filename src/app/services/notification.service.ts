@@ -21,7 +21,6 @@ export class NotificationService {
   }
 
   showError(message: HttpErrorResponse): void {
-    console.log(message);
     this.options.panelClass = ['lift', 'error'];
     this.snackBar.open(message.error.status_message, 'X', this.options);
   }

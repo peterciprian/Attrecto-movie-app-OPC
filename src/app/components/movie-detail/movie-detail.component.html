@@ -1,12 +1,22 @@
-<div class="d-flex flex-column justify-content-center align-items-center">
-  <img class="poster-image" [src]="imgSource" >
-  <h1>{{data.movie.title}}</h1>
-  <div>{{data.movie.overview}}</div>
-  <div>Megjelenés éve: {{data.movie.release_date}}</div>
-  <div>Játékidő: {{data.movie.runtime}} perc</div>
-  <div>Ország: {{data.movie.release_date}}</div>
-  <a href="http://www.imdb.com/title/{{data.movie.imdb_id}}" target="_blank" rel="noopener noreferrer">IMDB</a>
-  <div *ngIf="data.movie.genres.length > 0" class="genre-labels flex-row mx-2">Műfaj:
-    <div *ngFor="let genre of data.movie.genres" class="label">{{genre.name}}</div>
+<div class="d-flex flex-row justify-content-center align-items-center">
+  <img class="poster-image mr-4" [src]="imgSource">
+  <div class="details flex-column">
+    <h1>{{data.movie.title}}</h1>
+    <h3 *ngIf="data.movie.tagline">{{data.movie.tagline}}</h3>
+    <div>{{data.movie.overview}}</div>
+    <div class="datas">
+      <div>Megjelenés éve: {{data.movie.release_date}}</div>
+      <div>Játékidő: {{data.movie.runtime}} perc</div>
+      <div *ngIf="data.movie.spoken_languages.length > 0" class="flex-row">Nyelvek:
+        <div class="coutry m-2" *ngFor="let language of data.movie.spoken_languages">{{language.name}}</div>
+      </div>
+      <div *ngIf="data.movie.production_countries.length > 0" class="flex-row">Ország:
+        <div class="coutry m-2" *ngFor="let coutry of data.movie.production_countries">{{coutry.name}}</div>
+      </div>
+    </div>
+    <a href="http://www.imdb.com/title/{{data.movie.imdb_id}}" target="_blank" rel="noopener noreferrer" class="imdb-link">IMDB</a>
+    <div *ngIf="data.movie.genres.length > 0" class="genre-labels flex-row my-4 justify-content-center">
+      <div *ngFor="let genre of data.movie.genres" class="label mr-2">{{genre.name}}</div>
+    </div>
   </div>
 </div>
