@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailComponent } from '../movie-detail/movie-detail.component';
 import { Details } from 'src/app/interfaces/details';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { Details } from 'src/app/interfaces/details';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public crud: CrudService, public dialog: MatDialog) { }
+  constructor(public crud: CrudService, public dialog: MatDialog, public notification: NotificationService) { }
 
   ngOnInit(): void {}
 
@@ -19,6 +20,8 @@ export class HomeComponent implements OnInit {
     this.crud.fetchDetails(id).subscribe( movieDetails => {
       console.log(movieDetails);
       this.openDialog(movieDetails);
+    }, error => {
+      this.notification.showError(error);
     });
   }
 

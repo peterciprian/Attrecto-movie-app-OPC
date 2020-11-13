@@ -12,9 +12,13 @@ export class MovieCardComponent implements OnInit {
   @Input() movie: Result;
   public width = 150;
   public height = 225;
+  public posterImageUrl = 'assets/img/moviePosterErrorImage.png';
 
-  constructor(public crud: CrudService) { }
+  constructor(public crud: CrudService) {
+   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.posterImageUrl = this.movie.poster_path ? `https://image.tmdb.org/t/p/w${this.width}_and_h${this.height}_bestv2${this.movie.poster_path}` : 'assets/img/moviePosterErrorImage.png';
+   }
 
 }

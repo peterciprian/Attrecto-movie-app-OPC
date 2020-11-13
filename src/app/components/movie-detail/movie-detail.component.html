@@ -1,12 +1,12 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
-  <img src="https://image.tmdb.org/t/p/w{{width}}_and_h{{height}}_bestv2{{data.movie.poster_path}}" alt="data.movie.name">
+  <img class="poster-image" [src]="imgSource" >
   <h1>{{data.movie.title}}</h1>
   <div>{{data.movie.overview}}</div>
   <div>Megjelenés éve: {{data.movie.release_date}}</div>
   <div>Játékidő: {{data.movie.runtime}} perc</div>
   <div>Ország: {{data.movie.release_date}}</div>
   <a href="http://www.imdb.com/title/{{data.movie.imdb_id}}" target="_blank" rel="noopener noreferrer">IMDB</a>
-  <div class="genre-labels flex-row mx-2">Műfaj:
+  <div *ngIf="data.movie.genres.length > 0" class="genre-labels flex-row mx-2">Műfaj:
     <div *ngFor="let genre of data.movie.genres" class="label">{{genre.name}}</div>
   </div>
 </div>

@@ -66,11 +66,6 @@ export class CrudService {
     return this.http.get<Details>(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${environment.apiKey}&language=${this.language}`, { headers });
   }
 
-  public getImage(source, width = 600, height = 450): Observable<any> {
-    const headers = new HttpHeaders();
-    return this.http.get<any>(`https://image.tmdb.org/t/p/w${width}_and_h${height}_bestv2${source}`, { headers });
-  }
-
 /**
  * fetches all genres from server
  */
@@ -88,6 +83,8 @@ export class CrudService {
       genres.genres.map((genre) => {
         genreMap[genre.id] = genre.name;
       });
+    }, (error) => {
+      console.error(error);
     });
     this.genreMap = genreMap;
   }
